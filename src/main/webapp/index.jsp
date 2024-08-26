@@ -17,7 +17,7 @@
 <h1 style="font-weight: bold; color: violet; font-size: 30px; text-align: center;">
     Jenkins using tomcat automation process is done succesfully
 </h1>
-<h1 style="font-weight: bold; color: lavender; font-size: 30px; text-align: center;">
+<h1 style="font-weight: bold; color: purple; font-size: 30px; text-align: center;">
     Deployment was done successsfully :)
 </h1>
 </body>
