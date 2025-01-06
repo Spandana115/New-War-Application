@@ -4,24 +4,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.yourcompany</groupId>
+    <groupId>com.example</groupId>
     <artifactId>web-application</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
+    <name>web-application</name>
+    <url>http://maven.apache.org</url>
+
     <dependencies>
-        <!-- Add necessary dependencies here -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
-            <scope>provided</scope>
-        </dependency>
+        <!-- Your project dependencies here -->
     </dependencies>
 
     <build>
         <plugins>
-            <!-- maven-compiler-plugin for compiling source code -->
+            <!-- maven-compiler-plugin for Java compilation -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -32,13 +29,13 @@
                 </configuration>
             </plugin>
 
-            <!-- maven-war-plugin for building war -->
+            <!-- maven-war-plugin for packaging WAR files -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.1</version>
                 <configuration>
-                    <webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
+                    <webappDirectory>${project.build.directory}/webapp</webappDirectory>
                 </configuration>
             </plugin>
 
@@ -46,10 +43,24 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
+                <version>2.22.2</version>
+                <configuration>
+                    <skipTests>false</skipTests>
+                </configuration>
             </plugin>
 
+            <!-- maven-resources-plugin for resource copying -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>properties</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
 </project>
